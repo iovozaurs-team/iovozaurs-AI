@@ -4,6 +4,7 @@ import asyncio
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
 from groq import Groq
+import time
 
 def load_config():
     config_file = 'api_config.json'
@@ -36,10 +37,10 @@ async def get_ai_response(user_input):
     try:
         chat_completion = client.chat.completions.create(
             messages=[
-                {"role": "system", "content": "You are iovozaur-AI. Developed by iovozaur-team. Brief and smart."},
+                {"role": "system", "content": "Ты - iovozaur-AI. Ты говоришь на всех языках которых тебя попросят написать ( Ты пишешь hello! а потом какой язык на этом языке говорить) базовый язык Англиский. "},
                 {"role": "user", "content": user_input}
             ],
-            model="llama3-8b-8192",
+            model="llama-3.3-70b-versatile",
         )
         return chat_completion.choices[0].message.content
     except Exception as e:
@@ -62,6 +63,8 @@ async def main():
     print("Status: RUNNING")
     print("Press CTRL+C to Shutdown")
     print("-------------------------------------")
+    await asyncio.sleep(10)
+    os.system("curl ascii.live/parrot")
     await dp.start_polling(bot)
 
 if __name__ == "__main__":
