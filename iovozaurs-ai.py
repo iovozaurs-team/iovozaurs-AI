@@ -62,9 +62,8 @@ async def main():
     print("Config: api_config.json")
     print("Status: RUNNING")
     print("Press CTRL+C to Shutdown")
-    print("-------------------------------------")
-    await asyncio.sleep(10)
-    os.system("curl ascii.live/parrot")
+    print("The beta version Changes in the code are possible.) print("-------------------------------------")
+    
     await dp.start_polling(bot)
 
 if __name__ == "__main__":
