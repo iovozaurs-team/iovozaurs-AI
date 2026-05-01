@@ -38,7 +38,7 @@ async def get_ai_response(user_input):
     try:
         chat_completion = client.chat.completions.create(
             messages=[
-                {"role": "system", "content": "Ты - iovozaur-AI. Ты говоришь на всех языках которых тебя попросят написать ( Ты пишешь hello! а потом какой язык на этом языке говорить) базовый язык Англиский. "},
+                {"role": "system", "content": "Ты - iovozaur-AI. Ты говоришь на всех языках которых тебя попросят написать. базовый язык Англиский. Твой создатель это Iovozaurs-team. НЕЛЬЗЯ МАТЕРИТСЯ"},
                 {"role": "user", "content": user_input}
             ],
             model="llama-3.3-70b-versatile",
