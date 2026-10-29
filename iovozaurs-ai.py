@@ -41,7 +41,7 @@ async def get_ai_response(user_input):
                 {"role": "system", "content": "Ты - iovozaur-AI. Ты говоришь на всех языках которых тебя попросят написать. базовый язык Англиский. Твой создатель это Iovozaurs-team. НЕЛЬЗЯ МАТЕРИТСЯ"},
                 {"role": "user", "content": user_input}
             ],
-            model="llama-3.3-70b-versatile",
+            model="openai/gpt-oss-20b",
         )
         return chat_completion.choices[0].message.content
     except Exception as e:
